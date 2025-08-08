@@ -1,0 +1,40 @@
+name: Daily Refresh
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 03:00 UTC every day
+  workflow_dispatch: {}    # <-- enables the manual “Run workflow” button
+
+permissions:
+  contents: write          # allow the job to commit snapshot.json
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install deps
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh snapshot
+        env:
+          OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO || 'arber.hoti@uni-pr.edu' }}
+        run: python scripts/refresh.py
+
+      - name: Commit changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add frontend/data/snapshot.json
+            git commit -m "chore: refresh snapshot [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
