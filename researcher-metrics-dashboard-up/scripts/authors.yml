@@ -1,0 +1,12 @@
+# Authors to track. You can use:
+#  - id: A######## (OpenAlex author ID)
+#  - name + institution: the script will resolve to the best-matching author
+authors:
+  - name: "Arber Hoti"
+    institution: "University of Prishtina"
+  - name: "Driton Qehaja"
+    institution: "University of Prishtina"
+  - name: "Gentrit Berisha"
+    institution: "University of Prishtina"
+  - name: "Besnik Krasniqi"
+    institution: "University of Prishtina"

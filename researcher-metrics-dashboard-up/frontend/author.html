@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Author Details</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="assets/author.js"></script>
+</head>
+<body>
+  <header>
+    <a href="./">&larr; Back</a>
+    <h1 id="authorName">Author</h1>
+    <p id="insts" class="sub"></p>
+  </header>
+
+  <main>
+    <section class="metrics" id="metrics"></section>
+    <section>
+      <h2>Works per Year (last 10)</h2>
+      <canvas id="worksChart"></canvas>
+    </section>
+    <section>
+      <h2>Citations per Year (last 10)</h2>
+      <canvas id="citesChart"></canvas>
+    </section>
+  </main>
+</body>
+</html>

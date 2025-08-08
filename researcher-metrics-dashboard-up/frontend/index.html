@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Researcher Metrics Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Researcher Metrics Dashboard</h1>
+    <p class="sub">OpenAlex-powered | Auto-refreshes daily via GitHub Actions</p>
+  </header>
+
+  <main>
+    <section id="controls">
+      <button id="reload">Reload data</button>
+      <button id="downloadCsv">Download CSV</button>
+      <span id="lastRefreshed"></span>
+    </section>
+
+    <section>
+      <table id="authorsTable">
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Institutions</th>
+            <th>Papers</th>
+            <th>Citations</th>
+            <th>h-index</th>
+            <th>i10-index</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>
+      Data: <a href="https://docs.openalex.org/" target="_blank">OpenAlex</a> •
+      Source on GitHub • Built for free hosting (Pages/Netlify/Vercel)
+    </small>
+  </footer>
+</body>
+</html>
