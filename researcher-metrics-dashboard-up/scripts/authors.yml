@@ -2,8 +2,7 @@
 #  - id: A######## (OpenAlex author ID)
 #  - name + institution: the script will resolve to the best-matching author
 authors:
-  - name: "Arber Hoti"
-    institution: "University of Prishtina"
+  - id: A5022322870            # the professor you just sent
   - name: "Driton Qehaja"
     institution: "University of Prishtina"
   - name: "Gentrit Berisha"
